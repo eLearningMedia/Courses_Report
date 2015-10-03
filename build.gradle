@@ -1,0 +1,62 @@
+apply plugin: "java"
+apply plugin: "war"
+apply plugin: "maven"
+apply plugin: "eclipse"
+apply plugin: "idea"
+
+group "es.elearningmedia"
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+version "2.0-SNAPSHOT"
+
+ext {
+	learnVersion = "9.1.201404.160205"
+	springVersion = "4.2.1.RELEASE"
+	deployServer = "192.168.0.101:9876"
+	deployInstance = "BBLEARN"
+}
+
+repositories {
+  mavenCentral()
+  maven {
+    url "https://maven.blackboard.com/content/repositories/releases/"
+  }
+}
+
+configurations {
+  buildUtils
+}
+
+dependencies {
+
+	providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
+	providedCompile 'javax.servlet.jsp:jsp-api:2.1'
+
+	providedCompile( "blackboard.platform:bb-platform:${learnVersion}" ) { transitive = false }
+	providedCompile( "blackboard.platform:bb-taglibs:${learnVersion}" ) { transitive = false }
+	providedCompile( "blackboard.platform:bb-cms-admin:${learnVersion}" ) { transitive = false }
+  
+  	//Spring
+	compile "org.springframework:spring-aop:${springVersion}",
+          "org.springframework:spring-beans:${springVersion}",
+          "org.springframework:spring-context:${springVersion}",
+          "org.springframework:spring-core:${springVersion}",
+          "org.springframework:spring-expression:${springVersion}",
+          "org.springframework:spring-web:${springVersion}",
+          "org.springframework:spring-webmvc:${springVersion}",
+          "org.springframework:spring-context-support:${springVersion}"
+          
+	buildUtils "org.oscelot:b2deploy-task:0.1.0"
+}
+
+// Add a task to deploy a B2 using starting block
+task deployB2( dependsOn: "war" ) << {
+      ant.taskdef( name: "b2deploy", classname: "org.oscelot.ant.B2DeployTask", classpath: project.configurations.buildUtils.asPath )
+      ant.b2deploy( localfilepath: project.war.archivePath, host: project.ext.deployServer, courseorgavailable: 'true', clean: 'true', webappName: 'bb-starting-block-' + project.ext.deployInstance )
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.7'
+}
