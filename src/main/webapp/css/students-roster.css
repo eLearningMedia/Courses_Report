@@ -1,4 +1,5 @@
-/* Copyright 2015 eLearning Solutions S.L.
+/*!
+Copyright 2015 eLearning Solutions S.L.
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
 published by the Free Software Foundation, either version 3 of the
@@ -10,13 +11,27 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package es.elearningmedia.listado.repository;
+.photo {
+	border: 1px solid #d4d4d4;
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -khtml-border-radius: 30px;
+    -webkit-border-radius: 30px;
+	width: 160px;
+	height: 160px;
+}
 
-import java.util.List;
-import es.elearningmedia.listado.model.Alumno;
+#link-license-roster > a {
+	font-size: xx-small;
+	color: darkgray;
+}
 
-public interface BbRepository {
-	
-	public List<Alumno> getFotos(int[] userPk1);
+.row {
+	padding-top: 5px;
+    padding-bottom: 5px;
+}
 
+.roster-data {
+	display: flex;
+    align-items: center;
 }

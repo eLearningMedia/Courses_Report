@@ -1,0 +1,5 @@
+Version 2.0
+
+	- Migrated to MVC architecture with Spring
+	- Removed client side procesing in views, (no more js)
+	- No backward compatibility. BBLearn April2014 required.

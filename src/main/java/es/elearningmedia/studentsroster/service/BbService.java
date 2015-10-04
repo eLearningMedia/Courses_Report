@@ -10,17 +10,22 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package es.elearningmedia.listado.service;
+package es.elearningmedia.studentsroster.service;
 
 import java.util.List;
 
-import es.elearningmedia.listado.model.Alumno;
-import es.elearningmedia.listado.model.StringsBundle;
+import es.elearningmedia.studentsroster.model.StringsBundle;
+import es.elearningmedia.studentsroster.model.Student;
 
 public interface BbService {
-	
-	public List<Alumno> getEnroledStudents(String courseId);
+
+	// Get a sorted list of students with photos
+	public List<Student> getEnroledStudents(String courseId);
+
+	// Get the context course title
 	public String getCourseTitle();
+
+	// Get internationalization strings
 	public StringsBundle getBundle();
 
 }

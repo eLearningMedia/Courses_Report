@@ -10,56 +10,60 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package es.elearningmedia.listado.model;
+package es.elearningmedia.studentsroster.model;
 
 /**
- * Represents the relevant information
- * of each student for the roster
+ * Represents the relevant information of each student for the roster
  * 
  * @author albertoruiz
  *
  */
-public class Alumno {
-	
-	private String foto;
+public class Student {
+
+	private String photo;
 	private String email;
 	private String firstname;
 	private String middlename;
 	private String lastname;
-	
-	public String getFoto() {
-		return foto;
+
+	public String getPhoto() {
+		return photo;
 	}
-	public void setFoto(String foto) {
-		this.foto = foto;
+
+	public void setPhoto(String foto) {
+		this.photo = foto;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getFirstname() {
 		return firstname;
 	}
+
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
+
 	public String getMiddlename() {
 		return middlename;
 	}
+
 	public void setMiddlename(String middlename) {
 		this.middlename = middlename;
 	}
+
 	public String getLastname() {
 		return lastname;
 	}
+
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-	
-	
-	
-	
 
 }
