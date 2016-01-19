@@ -14,7 +14,7 @@ version "2.0-SNAPSHOT"
 ext {
 	learnVersion = "9.1.201404.160205"
 	springVersion = "4.2.1.RELEASE"
-	deployServer = "192.168.0.101:9876"
+	deployServer = "localhost:9876"
 	deployInstance = "BBLEARN"
 }
 
@@ -47,6 +47,9 @@ dependencies {
           "org.springframework:spring-web:${springVersion}",
           "org.springframework:spring-webmvc:${springVersion}",
           "org.springframework:spring-context-support:${springVersion}"
+          
+    //Gson
+	compile 'com.google.code.gson:gson:2.3.1'
           
 	buildUtils "org.oscelot:b2deploy-task:0.1.0"
 }

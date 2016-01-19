@@ -31,6 +31,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.-->
 <!-- Bootstrap compiled and minified JavaScript -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
+<script src="${pageContext.request.contextPath}/js/tools-management.js"></script>
 
 <bbNG:learningSystemPage title="${title}" ctxId="ctx">
 
@@ -40,51 +42,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.-->
 		</bbNG:breadcrumbBar>
 
 		<bbNG:pageTitleBar>
-				${course}<br>
-				${studentscount}<br>
+				<h1>Herramientas instaladas</h1>
 		</bbNG:pageTitleBar>
-		<div class="row">
-			<div id="link-license-roster" class="col-xs-3 col-xs-offset-9">
-				<a href="https://github.com/eLearningMedia/b2b-listado-alumnos"
-					target="_blank">${license}</a>
-			</div>
-		</div>
 	</bbNG:pageHeader>
 
-	<c:forEach items="${students}" var="student" varStatus="loopStatus">
-		<c:if test="${loopStatus.index % 2 == 0}">
-			<div class='row roster-data'>
-		</c:if>
-		<div class='col-xs-2'>
-			<c:choose>
-				<c:when test="${student.photo.length() == 0}">
-					<img
-						src="${pageContext.request.contextPath}/images/unknown.jpg"
-						class="photo">
-				</c:when>
-				<c:otherwise>
-					<img src="${student.photo}" class="photo">
-				</c:otherwise>
-			</c:choose>
-		</div>
-		<div class='col-xs-4'>
-			<div class='roster-name row'>
-				<c:choose>
-					<c:when test="${student.middlename.length() == 0}">
-					       ${name} ${student.firstname} &nbsp;${student.lastname}
-					    </c:when>
-					<c:otherwise>
-					        ${name} ${student.firstname} &nbsp;${student.middlename} &nbsp;${student.lastname}
-					    </c:otherwise>
-				</c:choose>
+	<button id='sizes'>Mostrar tamaño de cursos</button>
+	<br>
+	<c:forEach items="${tool_rows}" var="row">
+		<div class='row'>
+			<div class="col-xs-3">
+				${row.tool_type }
 			</div>
-			<div class='roster-email row'>
-				${email}<a href="mailto:${student.email }">${student.email }</a>
+			<div class="col-xs-5">
+				${row.tool_handler }
 			</div>
 		</div>
-		<c:if test="${loopStatus.index % 2 != 0}">
-		</div>
-		</c:if>
 	</c:forEach>
 
 </bbNG:learningSystemPage>

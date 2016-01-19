@@ -10,22 +10,11 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package es.elearningmedia.studentsroster.service;
+package es.elearningmedia.toolsmanagement.repository;
 
-import java.util.List;
+import org.springframework.stereotype.Repository;
 
-import es.elearningmedia.studentsroster.model.StringsBundle;
-import es.elearningmedia.studentsroster.model.Student;
-
-public interface BbService {
-
-	// Get a sorted list of students with photos
-	public List<Student> getEnroledStudents(String courseId);
-
-	// Get the context course title
-	public String getCourseTitle();
-
-	// Get internationalization strings
-	public StringsBundle getBundle();
+@Repository
+public class BbRepositoryImpl implements BbRepository {
 
 }

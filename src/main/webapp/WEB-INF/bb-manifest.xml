@@ -5,13 +5,13 @@
 	<plugin>
 
 		<name value="b2.name" />
-		<handle value="listadodealumnos" />
+		<handle value="toolsManagement" />
 		<description value="b2.description" />
 		<default-locale value="en_US" />
 
-		<version value="2.0" />
+		<version value="1.0" />
 		<requires>
-			<bbversion value="9.1.201410.160373" />
+			<bbversion value="9.1.201404.160205" />
 		</requires>
 
 		<vendor>
@@ -22,14 +22,14 @@
 		</vendor>
 
 		<application-defs>
-			<application handle="listadodealumnos" type="shared"
+			<application handle="toolsManagement" type="shared"
 				use-ssl="true" name="b2.name" can-allow-guest="false">
 				<description>b2.description</description>
 				<links>
 					<link>
-						<type value="tool" />
+						<type value="system_tool" />
 						<name value="b2.name" />
-						<url value="controller/students-roster" />
+						<url value="controller/tools-management" />
 						<description value="b2.description" />
 					</link>
 				</links>
@@ -59,11 +59,7 @@
 			<permission type="java.lang.RuntimePermission" name="getProtectionDomain" />
 			<permission type="java.io.FilePermission" name="${java.home}/lib/*"
 				actions="read" />
-
-			<permission type="java.security.SecurityPermission"
-				name="getProperty.ssl.trustManagerFactory.algorithm" />
-			<permission type="java.security.SecurityPermission"
-				name="getProperty.ssl.keyManagerFactory.algorithm" />
+				
 		</permissions>
 
 	</plugin>

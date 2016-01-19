@@ -10,16 +10,33 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package es.elearningmedia.studentsroster.repository;
+package es.elearningmedia.toolsmanagement.model;
 
-import java.util.List;
+/**
+ * Represents the relevant information of each student for the roster
+ * 
+ * @author albertoruiz
+ *
+ */
+public class Tool {
 
-import es.elearningmedia.studentsroster.model.Student;
+	private String tool_type;
+	private String tool_handler;
 
-public interface BbRepository {
+	public String getTool_type() {
+		return tool_type;
+	}
 
-	// Get Social Profile user photos from users table, (cld_avatar_url field),
-	//along with name and email and put them in Student objects
-	public List<Student> getPhotos(int[] userPk1);
+	public void setTool_type(String tool_type) {
+		this.tool_type = tool_type;
+	}
+
+	public String getTool_handler() {
+		return tool_handler;
+	}
+
+	public void setTool_handler(String tool_handler) {
+		this.tool_handler = tool_handler;
+	}
 
 }
