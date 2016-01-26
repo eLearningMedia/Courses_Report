@@ -36,7 +36,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.-->
 		<bbNG:pageTitleBar>
 				${str_bundle.strTitle}
 		</bbNG:pageTitleBar>
-		<a href="">${str_bundle.strLicense}</a>
+		<a href="https://github.com/eLearningMedia/Courses_Report/releases/tag/V1.0" target="_blank">${str_bundle.strLicense}</a>
 	</bbNG:pageHeader>
 	<table id="courses-report">
 		<thead>
