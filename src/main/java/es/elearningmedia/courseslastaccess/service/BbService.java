@@ -10,11 +10,18 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package es.elearningmedia.toolsmanagement.repository;
+package es.elearningmedia.courseslastaccess.service;
 
-import org.springframework.stereotype.Repository;
+import java.util.List;
 
-@Repository
-public class BbRepositoryImpl implements BbRepository {
+import es.elearningmedia.courseslastaccess.model.CourseLastAccess;
+import es.elearningmedia.courseslastaccess.model.StringsBundle;
+
+public interface BbService {
+
+	// Get internationalization strings
+	public StringsBundle getBundle();
+	
+	public List<CourseLastAccess> getCoursesLastAccess();
 
 }

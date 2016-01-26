@@ -5,7 +5,7 @@
 	<plugin>
 
 		<name value="b2.name" />
-		<handle value="toolsManagement" />
+		<handle value="coursesLastAccess" />
 		<description value="b2.description" />
 		<default-locale value="en_US" />
 
@@ -22,14 +22,14 @@
 		</vendor>
 
 		<application-defs>
-			<application handle="toolsManagement" type="shared"
+			<application handle="coursesLastAccess" type="shared"
 				use-ssl="true" name="b2.name" can-allow-guest="false">
 				<description>b2.description</description>
 				<links>
 					<link>
 						<type value="system_tool" />
 						<name value="b2.name" />
-						<url value="controller/tools-management" />
+						<url value="controller/courses-last-access" />
 						<description value="b2.description" />
 					</link>
 				</links>

@@ -1,4 +1,4 @@
-Listado de alumnos
+Courses Report
 =================
 
 Copyright 2015 eLearning Solutions S.L.
@@ -9,6 +9,6 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy of the GNU Affero General Public License along with this program. If not, see http://www.gnu.org/licenses/.
 
-Student Roster is a Building Block for Blackboard Learn developed by eLearning Media. It shows a roster with all enroled users with student role in the current course, showing the Blackboard social profile photo and contact data.
+Courses Report is a Building Block for Blackboard Learn developed by eLearning Media. It shows a sortable table with a search box where you can find all the platform courses with last access, enrolled students, instructors and size.
 
-Listado de alumnos es un Building Block para Blackboard Learn desarrollado por eLearning Media que permite mostrar un listado de usuarios inscritos en un curso mostrando su fotografía del perfil social de Blackboard y datos de contacto.
+Courses Report es un Building Block para Blackboard Learn desarrollado por eLearning Media que muestra una tabla ordenable y con caja de búsqueda donde están todos los cursos de la plataforma con la fecha del último acceso, estudiantes y profesores matriculados y tamaño.

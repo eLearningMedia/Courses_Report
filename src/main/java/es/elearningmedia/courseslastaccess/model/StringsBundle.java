@@ -10,7 +10,7 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package es.elearningmedia.toolsmanagement.model;
+package es.elearningmedia.courseslastaccess.model;
 
 /**
  * Object to contain labels for multilanguage
@@ -21,12 +21,14 @@ package es.elearningmedia.toolsmanagement.model;
 public class StringsBundle {
 
 	private String strCourse;
-	private String strNumberStudents;
+	private String strLicense;
+	private String strLastAccess;
 	private String strTitle;
 	private String strDescription;
-	private String strLicense;
-	private String strName;
-	private String strEmail;
+	private String strSize;
+	private String strStudents;
+	private String strInstructors;
+	
 
 	public String getStrCourse() {
 		return strCourse;
@@ -36,12 +38,20 @@ public class StringsBundle {
 		this.strCourse = strCourse;
 	}
 
-	public String getStrNumberStudents() {
-		return strNumberStudents;
+	public String getStrLicense() {
+		return strLicense;
 	}
 
-	public void setStrNumberStudents(String strNumberStudents) {
-		this.strNumberStudents = strNumberStudents;
+	public void setStrLicense(String strLicense) {
+		this.strLicense = strLicense;
+	}
+
+	public String getStrLastAccess() {
+		return strLastAccess;
+	}
+
+	public void setStrLastAccess(String strLastAccess) {
+		this.strLastAccess = strLastAccess;
 	}
 
 	public String getStrTitle() {
@@ -60,28 +70,28 @@ public class StringsBundle {
 		this.strDescription = strDescription;
 	}
 
-	public String getStrLicense() {
-		return strLicense;
+	public String getStrSize() {
+		return strSize;
 	}
 
-	public void setStrLicense(String strLicense) {
-		this.strLicense = strLicense;
+	public void setStrSize(String strSize) {
+		this.strSize = strSize;
 	}
 
-	public String getStrName() {
-		return strName;
+	public String getStrStudents() {
+		return strStudents;
 	}
 
-	public void setStrName(String strName) {
-		this.strName = strName;
+	public void setStrStudents(String strStudents) {
+		this.strStudents = strStudents;
 	}
 
-	public String getStrEmail() {
-		return strEmail;
+	public String getStrInstructors() {
+		return strInstructors;
 	}
 
-	public void setStrEmail(String strEmail) {
-		this.strEmail = strEmail;
+	public void setStrInstructors(String strInstructors) {
+		this.strInstructors = strInstructors;
 	}
 
 }

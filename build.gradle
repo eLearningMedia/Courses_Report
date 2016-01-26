@@ -9,11 +9,11 @@ group "es.elearningmedia"
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
-version "2.0-SNAPSHOT"
+version "1.0-SNAPSHOT"
 
 ext {
 	learnVersion = "9.1.201404.160205"
-	springVersion = "4.2.1.RELEASE"
+	springVersion = "4.2.3.RELEASE"
 	deployServer = "localhost:9876"
 	deployInstance = "BBLEARN"
 }
