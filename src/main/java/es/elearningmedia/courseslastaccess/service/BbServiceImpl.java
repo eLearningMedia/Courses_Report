@@ -110,17 +110,15 @@ public class BbServiceImpl implements BbService {
 				courseLastAccess.setInstructors(Integer.toString(instructorsCount));
 				courseLastAccess.setStudents(Integer.toString(studentsCount));
 				
-				courseLastAccess.setSize(Long.toString(getCourseSizes(curso)));
+				courseLastAccess.setSize(Float.toString((getCourseSizes(curso)/1024f)/1024f));
 				
 				result.add(courseLastAccess);
 			}
 			
 			
 		} catch (KeyNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (PersistenceException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -138,7 +136,12 @@ public class BbServiceImpl implements BbService {
 		} catch (KeyNotFoundException e) {
 			e.printStackTrace();
 		}
-		return csm.getSizeTotal();
+		
+		if(csm.getSizeTotal() == null) {
+			return 0L;
+		}else {
+			return csm.getSizeTotal();
+		}
 		
 	}
 
