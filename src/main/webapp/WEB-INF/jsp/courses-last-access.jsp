@@ -16,13 +16,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.-->
 <%@ taglib uri="/bbNG" prefix="bbNG"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.1.2/css/buttons.dataTables.min.css">
 
-<!-- compiled and minified jQuery -->
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 
-<!-- compiled and minified jQuery -->
-<script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.html5.min.js"></script>
 
 <script src="${pageContext.request.contextPath}/js/courses-report.js"></script>
 
@@ -36,7 +37,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.-->
 		<bbNG:pageTitleBar>
 				${str_bundle.strTitle}
 		</bbNG:pageTitleBar>
-		<a href="https://github.com/eLearningMedia/Courses_Report/releases/tag/V1.0" target="_blank">${str_bundle.strLicense}</a>
+		<a href="https://github.com/eLearningMedia/Courses_Report/releases/tag/V1.1" target="_blank">${str_bundle.strLicense}</a>
 	</bbNG:pageHeader>
 	<table id="courses-report">
 		<thead>
@@ -47,6 +48,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.-->
 				<th>${str_bundle.strSize}</th>
 				<th>${str_bundle.strStudents}</th>
 				<th>${str_bundle.strInstructors}</th>
+				<th>${str_bundle.strCreated}</th>
+				<th>${str_bundle.strStatus}</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -58,6 +61,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.-->
 				<td>${row.size }</td>
 				<td>${row.students }</td>
 				<td>${row.instructors }</td>
+				<td>${row.created }</td>
+				<td>${row.status }</td>
 		</c:forEach>
 		</tbody>
 	</table>

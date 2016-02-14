@@ -55,6 +55,8 @@ public class BbServiceImpl implements BbService {
 		resultado.setStrSize(resourceBundle.getString("b2.strSize"));
 		resultado.setStrStudents(resourceBundle.getString("b2.strStudents"));
 		resultado.setStrInstructors(resourceBundle.getString("b2.strInstructors"));
+		resultado.setStrCreated(resourceBundle.getString("b2.strCreated"));
+		resultado.setStrStatus(resourceBundle.getString("b2.strStatus"));
 
 		return resultado;
 	}
@@ -98,7 +100,7 @@ public class BbServiceImpl implements BbService {
 				
 				CourseLastAccess courseLastAccess = new CourseLastAccess();
 				courseLastAccess.setCourse_id(curso.getCourseId());
-				SimpleDateFormat formatedDate = new SimpleDateFormat("dd-MM-yyyy");
+				SimpleDateFormat formatedDate = new SimpleDateFormat("yyyy-MM-dd");
 				if(lastAccess == null) {
 					courseLastAccess.setLast_access("Never");
 					courseLastAccess.setDate_sort("0");
@@ -106,6 +108,16 @@ public class BbServiceImpl implements BbService {
 					courseLastAccess.setLast_access(formatedDate.format(lastAccess.getTime()));
 					courseLastAccess.setDate_sort(Long.toString(lastAccess.getTimeInMillis()));
 				}
+				
+				courseLastAccess.setCreated(formatedDate.format(curso.getCreatedDate().getTime()));
+				
+				String status = "Unavailable";
+				
+				if(curso.getIsAvailable()) {
+					status = "Available";
+				}
+				
+				courseLastAccess.setStatus(status);
 				
 				courseLastAccess.setInstructors(Integer.toString(instructorsCount));
 				courseLastAccess.setStudents(Integer.toString(studentsCount));

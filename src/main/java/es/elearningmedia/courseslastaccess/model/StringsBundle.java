@@ -28,6 +28,8 @@ public class StringsBundle {
 	private String strSize;
 	private String strStudents;
 	private String strInstructors;
+	private String strCreated;
+	private String strStatus;
 	
 
 	public String getStrCourse() {
@@ -92,6 +94,22 @@ public class StringsBundle {
 
 	public void setStrInstructors(String strInstructors) {
 		this.strInstructors = strInstructors;
+	}
+
+	public String getStrCreated() {
+		return strCreated;
+	}
+
+	public void setStrCreated(String strCreated) {
+		this.strCreated = strCreated;
+	}
+
+	public String getStrStatus() {
+		return strStatus;
+	}
+
+	public void setStrStatus(String strStatus) {
+		this.strStatus = strStatus;
 	}
 
 }

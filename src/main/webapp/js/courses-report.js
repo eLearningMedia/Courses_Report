@@ -27,6 +27,16 @@ defer(function () {
 			var table = $("#courses-report").DataTable( {
 				//Order by time in milliseconds from epoch
 		        "order": [[ 1, "asc" ]],
+		        //Add export csv button
+		        dom: 'Bfrtip',
+		        buttons: [
+						{
+						    extend: 'csv',
+						    exportOptions: {
+						    	columns: ':visible'
+						    }
+						}
+		              ],
 		        //Hide milliseconds ordering column
 		        "columnDefs": [
 		                       {
@@ -36,6 +46,7 @@ defer(function () {
 		                       }
 		                   ]
 		    } );
+			
 		});
 	})(jQuery);
 });

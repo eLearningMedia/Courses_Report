@@ -29,6 +29,8 @@ public class CourseLastAccess implements Comparable<CourseLastAccess> {
 	private String size;
 	private String students;
 	private String instructors;
+	private String created;
+	private String status;
 
 	public String getCourse_id() {
 		return course_id;
@@ -77,6 +79,23 @@ public class CourseLastAccess implements Comparable<CourseLastAccess> {
 	public void setDate_sort(String date_sort) {
 		this.date_sort = date_sort;
 	}
+
+	public String getCreated() {
+		return created;
+	}
+
+	public void setCreated(String created) {
+		this.created = created;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	
 
 	@Override
 	public int compareTo(CourseLastAccess o) {
