@@ -27,6 +27,7 @@ defer(function () {
 			var table = $("#courses-report").DataTable( {
 				//Order by time in milliseconds from epoch
 		        "order": [[ 1, "asc" ]],
+		        paging: false,
 		        //Add export csv button
 		        dom: 'Bfrtip',
 		        buttons: [
