@@ -24,8 +24,6 @@ import blackboard.data.course.CourseMembership.Role;
 import blackboard.data.course.size.CourseSize;
 import blackboard.data.course.size.CourseSizeManager;
 import blackboard.persist.Id;
-import blackboard.persist.KeyNotFoundException;
-import blackboard.persist.PersistenceException;
 import blackboard.persist.course.CourseDbLoader;
 import blackboard.persist.course.CourseMembershipDbLoader;
 import blackboard.platform.intl.BbResourceBundle;
@@ -128,13 +126,9 @@ public class BbServiceImpl implements BbService {
 			}
 			
 			
-		} catch (KeyNotFoundException e) {
-			e.printStackTrace();
-		} catch (PersistenceException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		//Collections.sort(result);
 		
 		return result;
 	}
@@ -145,8 +139,8 @@ public class BbServiceImpl implements BbService {
 		CourseSize csm = new CourseSize();
 		try {
 			csm = CourseSizeManager.getInstance().loadByCourseId(courseId);
-		} catch (KeyNotFoundException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			
 		}
 		
 		if(csm.getSizeTotal() == null) {
